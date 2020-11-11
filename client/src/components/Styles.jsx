@@ -23,6 +23,52 @@ export const Container = styled.div`
     width: 300px;
     box-shadow: 6px 6px 5px gray;
 
+    .btn-primary {
+      color: #fff;
+      background-color: #007bff;
+      border-color: #007bff;
+      cursor: pointer;
+      border: 1px solid transparent;
+      padding: .375rem .75rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      border-radius: .25rem;
+      transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+      font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    }
+
+
+
+    .form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+
+
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+
 `;
 
 export const NavBarCon = styled.div`
@@ -30,16 +76,10 @@ export const NavBarCon = styled.div`
   flex-direction: row;
   justify-content: space-between;
   height: 10vh;
-  /* border-bottom: 1px solid black; */
+
   box-shadow: 0 2px 5px grey;
   width: 100%;
   margin: 0 auto;
-
-  /* position: relative;  padding: .5rem 1rem;*/
-
-
-  /* align-items: center; */
-
 
 `;
 
@@ -56,11 +96,6 @@ export const Title = styled.h1`
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: bold;
-    /* align-item: center; */
-
-  /* width: 110px;
-    height: 110px;
-    cursor: pointer; */
 
 `;
 
