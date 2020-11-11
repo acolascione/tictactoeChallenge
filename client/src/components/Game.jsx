@@ -1,42 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { GameCon } from './Styles.jsx';
 import Board from './Board.jsx';
 
+const Game = ({ userName1, userName2, endgame, handleScore }) => {
+  const [ player1, setPlayer1 ] = useState(true);
+  const [ player2, setPlayer2 ] = useState(false);
 
-class Game extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      player1: true,
-      player2: false,
-      check: true
+  const handleTurn = (firstPlayer, firstBoolean, secondPlayer, secondBoolean) => {
+    if (firstPlayer === 'player1') {
+      setPlayer1(firstBoolean)
+      setPlayer2(secondBoolean)
+    } else {
+      setPlayer2(firstBoolean)
+      setPlayer1(secondBoolean)
     }
-    this.handleTurn = this.handleTurn.bind(this);
   }
-
-  handleTurn(firstPlayer, firstBoolean, secondPlayer, secondBoolean) {
-    this.setState({
-      [firstPlayer]: firstBoolean,
-      [secondPlayer]: secondBoolean,
-    })
-  }
-
-  render() {
-    const { player1, player2 } = this.state;
-    const { userName1, userName2, endgame, handleScore } = this.props;
-    return (
-      <GameCon>
-        <p>It's {player1 ? userName1 : userName2}'s turn</p>
-        <Board
-          turn={this.handleTurn}
-          player1={player1}
-          player2={player2}
-          handleScore={handleScore}
-          endgame={endgame}
-        />
-      </GameCon>
-    )
-  }
+  return (
+    <GameCon>
+    <p>It's {player1 ? userName1 : userName2}'s turn</p>
+    <Board
+      turn={handleTurn}
+      player1={player1}
+      player2={player2}
+      handleScore={handleScore}
+      endgame={endgame}
+    />
+  </GameCon>
+  )
 }
+
+
 
 export default Game;

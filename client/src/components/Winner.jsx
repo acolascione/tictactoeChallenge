@@ -1,33 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Holder, Container } from './Styles.jsx';
 
+const Winner = ({ winner, endgame }) => {
+  const [tied, setTied] = useState('There is a tie!');
+  const [playerWon, setPlayerWon] = useState(`The winner is ${winner} !`);
 
-class Winner extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      tied: 'There is a tie!',
-      playerWon: 'The winner is ' + this.props.winner + '!',
-    };
-    this.handleClick = this.handleClick.bind(this);
+  const handleClick = (e) => {
+    endgame(false);
   }
 
-
-  handleClick(e) {
-    this.props.endgame(false);
-  }
-  render() {
-    const { winner } = this.props;
-    const { tied, playerWon } = this.state;
-    return (
-      <Holder>
-        <Container>
-          <p>{winner === 'tied' ? tied : playerWon}</p>
-          <button className="btn-primary" onClick={this.handleClick}>Play Again</button>
-        </Container>
-      </Holder>
-    )
-  }
+  return (
+    <Holder>
+    <Container>
+      <p>{winner === 'tied' ? tied : playerWon}</p>
+      <button className="btn-primary" onClick={handleClick}>Play Again</button>
+    </Container>
+  </Holder>
+  )
 }
 
 export default Winner;
