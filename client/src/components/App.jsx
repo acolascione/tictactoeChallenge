@@ -42,6 +42,11 @@ class App extends React.Component {
       [player]: this.state[player] + 1,
       winner
     })
+    if (winner === "Tied") {
+      this.setState({
+        ties: this.state.ties + 1,
+      })
+    }
   }
 
   handleName(player1, player2) {

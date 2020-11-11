@@ -1,5 +1,4 @@
 import React from 'react';
-// import BoardCon from './Styles.jsx';
 import styled from 'styled-components';
 
 
@@ -9,22 +8,13 @@ const BoardCon = styled.div`
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
-    /* flex-direction: row; */
     flex-wrap: wrap;
     box-shadow: 6px 6px 10px grey;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-
-
 
   #tile0 {
     width: 110px;
     height: 110px;
     cursor: pointer;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,10 +28,6 @@ const BoardCon = styled.div`
     width: 110px;
     height: 110px;
     cursor: pointer;
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,10 +61,6 @@ const BoardCon = styled.div`
     font-size: 5em;
     font-weight: 700;
     cursor: pointer;
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center; */
     font-size: 5em;
     font-weight: 700;
     border-bottom: 5px solid black;
@@ -172,15 +154,6 @@ const BoardCon = styled.div`
     color: black;
     background-color: white;
 
-
-
-
-  /* .element {
-    width: 100px;
-    height: 100px;
-    color: black;
-    background-color: white;
-  } */
 `;
 
 const Board = ({ handleScore, endgame, turn, player1, player2 }) => {
@@ -193,9 +166,7 @@ const Board = ({ handleScore, endgame, turn, player1, player2 }) => {
   }
 
   const handleClick = (e) => {
-    console.log('click', e.target.classList.length)
-    /* let tile = e.taget; */
-    /* console.log('click2', tile.classList.length) */
+    /* console.log('click', e.target.classList.length) */
     if (e.target.classList.length === 2) {
       play(e.target);
     }
